@@ -81,7 +81,7 @@ module('polyfill', function() {
     const Foo = EmberObject.extend({
       init() {
         calls.push('foo before init');
-        super.init(...arguments);
+        this._super(...arguments);
         calls.push('foo after init');
       },
     });
@@ -89,7 +89,7 @@ module('polyfill', function() {
     const Bar = Foo.extend({
       init() {
         calls.push('bar before init');
-        super.init(...arguments);
+        this._super(...arguments);
         calls.push('bar after init');
       },
     });
